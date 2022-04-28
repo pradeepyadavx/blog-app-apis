@@ -28,7 +28,7 @@
                   spring.datasource.password=root
                   
                   
-       now need to create database ion mysql image
+       now need to create database in mysql image
        
              docker exec -it mysqldb
              
@@ -38,7 +38,7 @@
 
                   
         here mysqldb is same name as image name of mysql container in step 1
-        change username and password accorfingly 
+        change username and password accordingly 
         
  Step 3: Build project 
            mvn install
