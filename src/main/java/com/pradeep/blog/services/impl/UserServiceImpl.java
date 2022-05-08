@@ -97,6 +97,7 @@ public class UserServiceImpl implements UserService {
 //		userDto.setEmail(user.getEmail());
 //		userDto.setPassword(user.getPassword());
 //		userDto.setAbout(user.getAbout());
+    	//user.setPassword(null);
 
         UserDto userDto = this.modelMapper.map(user, UserDto.class);
 
