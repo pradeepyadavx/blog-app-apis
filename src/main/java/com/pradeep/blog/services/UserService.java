@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.pradeep.blog.payloads.UserDto;
 
+
 public interface UserService {
     UserDto createUser(UserDto userDto);
 
@@ -14,4 +15,6 @@ public interface UserService {
     List<UserDto> getAllUsers();
 
     void deleteUser(Integer userId);
+    
+    UserDto registerNewUser(UserDto userDto);
 }

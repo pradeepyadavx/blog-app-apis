@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pradeep.blog.exceptions.ResourseNotFoundException;
 import com.pradeep.blog.payloads.JwtAuthRequest;
 import com.pradeep.blog.payloads.JwtAuthResponse;
+import com.pradeep.blog.payloads.UserDto;
 import com.pradeep.blog.security.JwtTokenHelper;
+import com.pradeep.blog.services.UserService;
 
 @RestController
 @RequestMapping("/api/v1/auth/")
@@ -31,6 +33,10 @@ public class AuthController {
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
+	
+	
+	@Autowired
+	private UserService userService;
 	
 	
 	@PostMapping("login")
@@ -59,6 +65,16 @@ public class AuthController {
 		} catch (Exception e) {
 			throw new  ResourseNotFoundException("Authentication","username and password Invalid",0);
 		}
+		
+	}
+	
+
+	@PostMapping("register")
+	public ResponseEntity<UserDto> registerUser(@RequestBody UserDto userDto){
+		
+		UserDto registerNewUser = this.userService.registerNewUser(userDto);
+		
+		return new ResponseEntity<>(registerNewUser,HttpStatus.CREATED);
 		
 	}
 
