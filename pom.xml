@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.pradeep.blog</groupId>
 	<artifactId>blog-app-apis</artifactId>
-	<version>0.4</version>
+	<version>1.0</version>
 	<name>blog-app-apis</name>
 	<description>Blog apps backend api</description>
 	<properties>
