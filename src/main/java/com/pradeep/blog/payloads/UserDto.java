@@ -1,14 +1,20 @@
 package com.pradeep.blog.payloads;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.pradeep.blog.entities.Role;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 @Setter
 @Getter
@@ -33,5 +39,8 @@ public class UserDto {
     @NotEmpty
     @Size(max = 500, message = "About can be max up to 500 Chaacter !!")
     private String about;
+    
+    private Set<RoleDto> roles= new HashSet<>();
+    
 
 }
